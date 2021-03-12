@@ -6,9 +6,21 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Console.WriteLine("Hello Drew!");
-            Console.Read();
+            string stringtemp = Console.ReadLine();
+            int temp = int.Parse(stringtemp);
+
+            if(temp < 10)
+            {
+                Console.WriteLine("Put on a coat");
+            }
+            else if(temp > 10)
+            {
+                Console.WriteLine("It's hot");
+            }
+            else
+            {
+                Console.WriteLine("It's 10 degrees");
+            }
         }
     }
 }
