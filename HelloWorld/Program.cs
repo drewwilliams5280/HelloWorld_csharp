@@ -6,19 +6,15 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            int lengthOfText = 0;
-            string wholeText = "";
-            do
+            int counter = 0;
+            string enteredText = "";
+            while(enteredText.Equals(""))
             {
-                Console.WriteLine("Please enter the name of a friend:");
-                string nameOfFriend = Console.ReadLine();
-                int currentLength = nameOfFriend.Length;
-                lengthOfText += currentLength;
-                wholeText += nameOfFriend;
-                Console.WriteLine(wholeText);
-      
-            } while (lengthOfText < 20);
-            Console.WriteLine("Thanks, that was enough");
+                Console.WriteLine("Please press enter to increase count or enter any text to stop the count.");
+                enteredText = Console.ReadLine();
+                counter++;
+                Console.WriteLine(counter);
+            }
             Console.Read();
         }
     }
