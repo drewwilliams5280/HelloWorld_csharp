@@ -6,20 +6,17 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            string stringtemp = Console.ReadLine();
-            int temp = int.Parse(stringtemp);
+            string numberAsString = "128";
+            int parsedValue;
+            bool success = int.TryParse(numberAsString, out parsedValue);
 
-            if(temp < 10)
+            if (success)
             {
-                Console.WriteLine("Put on a coat");
-            }
-            else if(temp > 10)
-            {
-                Console.WriteLine("It's hot");
+                Console.WriteLine("Parsing successful - number is {0}", parsedValue);
             }
             else
             {
-                Console.WriteLine("It's 10 degrees");
+                Console.WriteLine("Parsing failed");
             }
         }
     }
