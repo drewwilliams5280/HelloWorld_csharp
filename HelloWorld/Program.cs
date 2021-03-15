@@ -6,17 +6,19 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            string numberAsString = "128";
-            int parsedValue;
-            bool success = int.TryParse(numberAsString, out parsedValue);
+            bool isAdmin = false;
+            bool isRegistered = true;
+            string userName = "";
+            Console.WriteLine("Please enter username");
+            userName = Console.ReadLine();
 
-            if (success)
+            if(isRegistered && userName != "" && userName.Equals("Admin"))
             {
-                Console.WriteLine("Parsing successful - number is {0}", parsedValue);
-            }
-            else
-            {
-                Console.WriteLine("Parsing failed");
+                Console.WriteLine("Hi there registered user");
+              
+                Console.WriteLine("Hi there, {0}", userName);
+               
+                Console.WriteLine("Hi there, Admin");
             }
         }
     }
