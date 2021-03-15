@@ -4,21 +4,31 @@ namespace HelloWorld
 {
     class Program
     {
+        static int highscore = 555;
+        static string highscorePlayer = "Scooby Doo";
         static void Main(string[] args)
         {
-            bool isAdmin = false;
-            bool isRegistered = true;
-            string userName = "";
-            Console.WriteLine("Please enter username");
-            userName = Console.ReadLine();
+            Console.WriteLine("Please enter your player name:");
+            string playerName = Console.ReadLine();
+            Console.WriteLine("Please enter your score:");
+            string scoreString = Console.ReadLine();
+            int.TryParse(scoreString, out int score);
+            CheckScore(score, playerName);
+            Console.Read();
+        }
 
-            if(isRegistered && userName != "" && userName.Equals("Admin"))
+        static void CheckScore(int score, string playerName)
+        {
+            if(score > highscore)
             {
-                Console.WriteLine("Hi there registered user");
-              
-                Console.WriteLine("Hi there, {0}", userName);
-               
-                Console.WriteLine("Hi there, Admin");
+                highscore = score;
+                highscorePlayer = playerName;
+                Console.WriteLine("New high score is {0}", highscore);
+                Console.WriteLine("New high score holder is {0}", highscorePlayer);
+            }
+            else
+            {
+                Console.WriteLine("The old high score of {0} could not be broken and is still held by {1}", highscore, highscorePlayer);
             }
         }
     }
