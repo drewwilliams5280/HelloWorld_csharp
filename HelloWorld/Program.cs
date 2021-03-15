@@ -6,13 +6,28 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            for(int counter = 0; counter < 10; counter++)
+            int result = 0;
+            int sum = 0;
+            double totalEntries = 0;
+            Console.WriteLine("Enter numbers between 0 and 20 to calculate average. Enter -1 to stop.");
+            while (result >= 0 && result <= 20)
             {
-                Console.WriteLine(counter);
-                if(counter == 3)
+                string stringResult = Console.ReadLine();
+                int.TryParse(stringResult, out result);
+                if (result >= 0 && result <= 20)
                 {
-                    Console.WriteLine("At 3 we stop!");
-                    break;
+                    sum += result;
+                    totalEntries++;
+                }
+                else if (result == -1)
+                {
+                    double average = sum / totalEntries;
+                    Console.WriteLine("The sum of your numbers is {0} and the total number of entries was {1}, making the average: {2}", sum, totalEntries, average);
+                }
+                else
+                {
+                    Console.WriteLine("Error: Please enter a number between 1 and 20, or -1 to stop the count.");
+                    result = 0;
                 }
             }
         }
