@@ -6,8 +6,10 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Console.WriteLine("Hello Drew!");
+            for(int counter = 1; counter <= 20; counter += 2)
+            {
+                Console.WriteLine(counter);
+            }
             Console.Read();
         }
     }
