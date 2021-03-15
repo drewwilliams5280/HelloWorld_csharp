@@ -4,32 +4,25 @@ namespace HelloWorld
 {
     class Program
     {
-        static int highscore = 555;
-        static string highscorePlayer = "Scooby Doo";
         static void Main(string[] args)
         {
-            Console.WriteLine("Please enter your player name:");
-            string playerName = Console.ReadLine();
-            Console.WriteLine("Please enter your score:");
-            string scoreString = Console.ReadLine();
-            int.TryParse(scoreString, out int score);
-            CheckScore(score, playerName);
-            Console.Read();
-        }
+            int temp = -5;
+            string stateOfMatter;
 
-        static void CheckScore(int score, string playerName)
-        {
-            if(score > highscore)
-            {
-                highscore = score;
-                highscorePlayer = playerName;
-                Console.WriteLine("New high score is {0}", highscore);
-                Console.WriteLine("New high score holder is {0}", highscorePlayer);
-            }
+            if (temp < 0)
+                stateOfMatter = "solid";
             else
-            {
-                Console.WriteLine("The old high score of {0} could not be broken and is still held by {1}", highscore, highscorePlayer);
-            }
+                stateOfMatter = "liquid";
+
+            Console.WriteLine("State of matter is {0}", stateOfMatter);
+
+            temp = 130;
+
+            stateOfMatter = temp > 100 ? "gas" : temp < 0 ? "solid" : "liquid";
+
+            Console.WriteLine("State of matter is {0}", stateOfMatter);
+
+            Console.Read();
         }
     }
 }
