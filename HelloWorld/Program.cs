@@ -6,16 +6,15 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            int counter = 0;
-            string enteredText = "";
-            while(enteredText.Equals(""))
+            for(int counter = 0; counter < 10; counter++)
             {
-                Console.WriteLine("Please press enter to increase count or enter any text to stop the count.");
-                enteredText = Console.ReadLine();
-                counter++;
                 Console.WriteLine(counter);
+                if(counter == 3)
+                {
+                    Console.WriteLine("At 3 we stop!");
+                    break;
+                }
             }
-            Console.Read();
         }
     }
 }
