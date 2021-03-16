@@ -12,7 +12,12 @@ namespace Classes
         private string eyeColor;
         private int age;
 
-        // constructor
+        public Human()
+        {
+
+        }
+
+        // parameterized constructor
         public Human(string firstName, string lastName, string eyeColor, int age)
         {
             this.firstName = firstName;

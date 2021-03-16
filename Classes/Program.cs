@@ -6,8 +6,9 @@ namespace Classes
     {
         static void Main(string[] args)
         {
-            Human drew = new Human("Drew", "Williams", "brown", 30);
-            drew.IntroduceMyself();
+            Box box = new Box(5, 5, 5);
+        
+            box.DisplayInfo();
         }
     }
 }
