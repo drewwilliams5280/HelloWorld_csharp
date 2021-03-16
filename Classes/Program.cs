@@ -6,7 +6,8 @@ namespace Classes
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Human drew = new Human("Drew", "Williams", "brown", 30);
+            drew.IntroduceMyself();
         }
     }
 }
