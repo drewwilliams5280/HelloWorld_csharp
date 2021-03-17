@@ -7,56 +7,32 @@ namespace Arrays
     {
         static void Main(string[] args)
         {
-            dynamic firstResponse;
-            Console.WriteLine("Enter anything:");
-            string firstResponseString = Console.ReadLine();
-            if(int.TryParse(firstResponseString, out int firstResponseInt))
+            // declars 2 array
+            string[,] matrix;
+            //3D array
+            int[,,] threeD;
+            // 2D array
+            int[,] array2D = new int[,]
             {
-                firstResponse = firstResponseInt;
-            }
-            else if(bool.TryParse(firstResponseString, out bool firstResponseBool))
-            {
-                firstResponse = firstResponseBool;
-            }
-            else
-            {
-                firstResponse = firstResponseString;
-            }
-            SecondStep(firstResponse);
-        }
+                { 1, 2, 3 },
+                { 4, 5, 6 },
+                { 7, 8, 9 }
+            };
+            Console.WriteLine($"{array2D[2,0]}");
 
-        static void SecondStep(dynamic firstResponse)
-        {
-            Console.WriteLine("Enter 1 for String");
-            Console.WriteLine("Enter 2 for Integer");
-            Console.WriteLine("Enter 3 for Boolean");
-            int intResponse;
-            string secondResponse = Console.ReadLine();
-            if(int.TryParse(secondResponse, out intResponse) && Enumerable.Range(1,3).Contains(intResponse))
+            threeD = new int[,,]
             {
-                FinalStep(firstResponse, intResponse);
-            }
-            else
-            {
-                Console.WriteLine("Please enter a valid number.");
-                SecondStep(firstResponse);
-            }
-        }
+                {
+                    { 000,001 },
+                    { 002,003 }
+                },
+                {
+                    {100,101 },
+                    {102, 103 }
+                }
+            };
+            Console.WriteLine($"{threeD[1,1,1]}");
 
-        static void FinalStep(dynamic firstResponse, int intResponse)
-        {
-            switch (intResponse)
-            {
-                case 1:
-                    Console.WriteLine($"Your first input was {firstResponse} and you claim it is a String. That is: {firstResponse.GetType() == typeof(string)}");
-                    break;
-                case 2:
-                    Console.WriteLine($"Your first input was {firstResponse} and you claim it is an Integer. That is: {firstResponse.GetType() == typeof(int)}");
-                    break;
-                case 3:
-                    Console.WriteLine($"Your first input was {firstResponse} and you claim it is a Boolean. That is: {firstResponse.GetType() == typeof(bool)}");
-                    break;
-            }
         }
     }
 }
