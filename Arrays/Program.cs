@@ -19,6 +19,7 @@ namespace Arrays
 
         static void NextMove(int playerNumber)
         {
+            CheckCatsGame();
             Console.WriteLine(String.Format("|{0,5}|{1,5}|{2,5}|", "   ", "   ", "   "));
             Console.WriteLine(String.Format("|{0,5}|{1,5}|{2,5}|", board[0, 0] + "  ", board[0, 1] + "  ", board[0, 2] + "  "));
             Console.WriteLine(String.Format("|{0}|{1}|{2}|", "-----", "-----", "-----"));
@@ -63,7 +64,7 @@ namespace Arrays
             {
                 Console.WriteLine("Player 1 Wins! Type 'start' to play again");
                 string response = Console.ReadLine();
-                if (response == "start" || response == "Start")
+                if (response.ToLower() == "start")
                 {
                     ResetBoard();
                     NextMove(playerTurn);
@@ -97,7 +98,7 @@ namespace Arrays
             {
                 Console.WriteLine("Player 2 Wins! Type 'start' to play again");
                 string response = Console.ReadLine();
-                if (response == "start" || response == "Start")
+                if (response.ToLower() == "start")
                 {
                     ResetBoard();
                     NextMove(playerTurn);
@@ -324,6 +325,24 @@ namespace Arrays
             board[2, 0] = "7";
             board[2, 1] = "8";
             board[2, 2] = "9";
+        }
+
+        static void CheckCatsGame()
+        {
+            int counter = 0;
+            foreach (string coordinate in board)
+            {
+                if (int.TryParse(coordinate, out int num))
+                {
+                    counter += 1;
+                }
+            }
+            if (counter == 0)
+            {
+                Console.WriteLine("Cat's game! Resetting board.");
+                ResetBoard();
+                NextMove(playerTurn);
+            }
         }
     }
 }
