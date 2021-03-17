@@ -45,17 +45,17 @@ namespace Arrays
 
         static void FinalStep(dynamic firstResponse, int intResponse)
         {
-            if(intResponse == 1)
+            switch (intResponse)
             {
-                Console.WriteLine($"Your first input was {firstResponse} and you claim it is a String. That is: {firstResponse.GetType() == typeof(string)}");
-            }
-            else if(intResponse == 2)
-            {
-                Console.WriteLine($"Your first input was {firstResponse} and you claim it is an Integer. That is: {firstResponse.GetType() == typeof(int)}");
-            }
-            else
-            {
-                Console.WriteLine($"Your first input was {firstResponse} and you claim it is a Boolean. That is: {firstResponse.GetType() == typeof(bool)}");
+                case 1:
+                    Console.WriteLine($"Your first input was {firstResponse} and you claim it is a String. That is: {firstResponse.GetType() == typeof(string)}");
+                    break;
+                case 2:
+                    Console.WriteLine($"Your first input was {firstResponse} and you claim it is an Integer. That is: {firstResponse.GetType() == typeof(int)}");
+                    break;
+                case 3:
+                    Console.WriteLine($"Your first input was {firstResponse} and you claim it is a Boolean. That is: {firstResponse.GetType() == typeof(bool)}");
+                    break;
             }
         }
     }
