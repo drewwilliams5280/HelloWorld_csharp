@@ -6,29 +6,24 @@ namespace Arrays
     {
         static void Main(string[] args)
         {
-            int[] grades = new int[5];
+            int[] nums = new int[10];
 
-            grades[0] = 97;
-            grades[1] = 67;
-            grades[2] = 77;
-            grades[3] = 73;
-            grades[4] = 89;
-
-            Console.WriteLine($"There are {grades.Length} grades total. They are:");
-
-            foreach (var grade in grades)
+            for(int i = 0; i < 10; i++)
             {
-                Console.WriteLine(grade);
+                nums[i] = i*i;
             }
 
-            string[] newGrades = { "97", "87", "77", "67", "60" };
-
-            Console.WriteLine("String grades:");
-
-            foreach (string grade in newGrades)
+            foreach(int num in nums)
             {
-                Console.WriteLine(grade);
+                Console.WriteLine(num);
             }
+
+            string[] friends = { "Nolan", "Patrick", "Victoria", "Keegan", "Colin" };
+
+            foreach(string friend in friends)
+            {
+                Console.WriteLine($"Hi there, {friend}!");
+            } 
         }
     }
 }
