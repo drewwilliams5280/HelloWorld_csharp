@@ -9,6 +9,7 @@ namespace Classes
             Box box = new Box(5, 5, 5);
         
             box.DisplayInfo();
+            Console.WriteLine($"The front surface of the box is {box.FrontSurface}");
         }
     }
 }

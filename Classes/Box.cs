@@ -18,12 +18,22 @@ namespace Classes
             }
         }
 
+        public int FrontSurface
+        {
+            get
+            {
+                return Width * Height;
+            }
+        }
+
         public Box(int length, int height, int width)
         {
             Length = length;
             Width = width;
             Height = height;
         }
+
+
 
         public void DisplayInfo()
         {
