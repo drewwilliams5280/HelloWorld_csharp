@@ -1,36 +1,22 @@
 ﻿using System;
 
-namespace StructsC
+namespace MathE
 {
-    struct Game
-    {
-        public string name;
-        public string developer;
-        public double rating;
-        public string releaseDate;
-
-        public void Display()
-        {
-            Console.WriteLine(name);
-            Console.WriteLine(developer);
-            Console.WriteLine(rating);
-            Console.WriteLine(releaseDate);
-        }
-    }
-
-
-
     class Program
     {
         static void Main(string[] args)
         {
-            Game game1;
-            game1.name = "Pokemon Go";
-            game1.developer = "Niantic";
-            game1.rating = 3.5;
-            game1.releaseDate = "01.07.20";
+            int num1 = 13;
+            int num2 = 9;
+            int num3 = 5;
+            Console.WriteLine(Math.Min(num1, num2));
+            Console.WriteLine(Math.Max(num1, num2));
+            Console.WriteLine(Math.Pow(num2, num3));
+            Console.WriteLine(Math.PI);
+            Console.WriteLine(Math.Sqrt(25));
+            Console.WriteLine(Math.Sqrt(345.543));
 
-            game1.Display();
+            Console.ReadKey();
         }
     }
 }
