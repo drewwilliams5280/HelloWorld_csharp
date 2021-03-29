@@ -6,17 +6,15 @@ namespace MathE
     {
         static void Main(string[] args)
         {
-            int num1 = 13;
-            int num2 = 9;
-            int num3 = 5;
-            Console.WriteLine(Math.Min(num1, num2));
-            Console.WriteLine(Math.Max(num1, num2));
-            Console.WriteLine(Math.Pow(num2, num3));
-            Console.WriteLine(Math.PI);
-            Console.WriteLine(Math.Sqrt(25));
-            Console.WriteLine(Math.Sqrt(345.543));
+            Random dice = new Random();
+            int numEyes;
 
-            Console.ReadKey();
+            for(int i = 0; i < 10; i++)
+            {
+                numEyes = dice.Next(1, 7);
+                Console.WriteLine(numEyes);
+            }
+
         }
     }
 }
