@@ -1,20 +1,30 @@
 ﻿using System;
 
-namespace MathE
+namespace DateTimeT
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Random dice = new Random();
-            int numEyes;
+            DateTime myDateTime = new DateTime(1988, 12, 22);
 
-            for(int i = 0; i < 10; i++)
-            {
-                numEyes = dice.Next(1, 7);
-                Console.WriteLine(numEyes);
-            }
+            Console.WriteLine("My birthday is {0}", myDateTime);
 
+            // Write today
+            Console.WriteLine(DateTime.Today);
+            // current time
+            Console.WriteLine(DateTime.Now);
+
+            // tomorrow
+            Console.WriteLine(DateTime.Now.AddDays(1));
+
+            // day of week
+            Console.WriteLine(DateTime.Now.DayOfWeek);
+
+            // days passed since bday
+
+            TimeSpan daysPassed = DateTime.Now.Subtract(myDateTime);
+            Console.WriteLine(daysPassed);
         }
     }
 }
