@@ -1,20 +1,32 @@
 ﻿using System;
+using System.Threading;
 
 namespace EventsAndDelegates
 {
-    class Program
+    public class DownloadHelper
     {
+        // Step 1 - create a delegate
+        public delegate void FileDownloadedEventHandler(object source, EventArgs args);
 
-        public delegate double PerformCalculation(double x, double y);
+        // Step 2 - create an event based on the delegate
+        public event FileDownloadedEventHandler FileDownloaded;
 
-        public static double Addition(double a, double b)
+        //Step 3 - raise the event
+
+        protected virtual void OnFileDownloaded()
         {
-            return a + b;
+            if(FileDownloaded != null)
+            {
+                FileDownloaded(this, EventArgs.Empty);
+            }
         }
-        static void Main(string[] args)
+        public void Download(File file)
         {
-            PerformCalculation getSum = Addition;
-            getSum(5.0, 5.0);
+            Console.WriteLine("Downloading file...");
+            Thread.Sleep(4000);
+
+            //Step 3.1
+            OnFileDownloaded();
         }
     }
 }
