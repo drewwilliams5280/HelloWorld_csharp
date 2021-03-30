@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31105.61
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StructsC", "StructsC\StructsC.csproj", "{174EE280-A179-4BF3-B342-C73F91F54616}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nullables", "Nullables\Nullables.csproj", "{F5C28C10-5CE4-413D-A072-017938C08422}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{174EE280-A179-4BF3-B342-C73F91F54616}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{174EE280-A179-4BF3-B342-C73F91F54616}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{174EE280-A179-4BF3-B342-C73F91F54616}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{174EE280-A179-4BF3-B342-C73F91F54616}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5C28C10-5CE4-413D-A072-017938C08422}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5C28C10-5CE4-413D-A072-017938C08422}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5C28C10-5CE4-413D-A072-017938C08422}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5C28C10-5CE4-413D-A072-017938C08422}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
